@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "455f8151-2b28-4bc2-80b8-f92f291f2ac5",
+		"name": "Daily Worker Roster Management System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45052122"
+	},
+	"item": [
+		{
+			"name": "Get All Shifts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shifts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shifts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Shift",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shift/7501446509770357068",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shift",
+						"7501446509770357068"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Shift",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2024-02-15\",\n    \"start_time\": \"09:00\",\n    \"end_time\": \"17:00\",\n    \"role\": \"delivery\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shift",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shift"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Shifts",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 6444812025950322350,\n    \"date\": \"2024-02-15\",\n    \"start_time\": \"09:00\",\n    \"end_time\": \"17:00\",\n    \"role\": \"cashier\",\n    \"status\": \"\",\n    \"worker_id\": 0,\n    \"assigned\": false,\n    \"overridden\": false,\n    \"requested_at\": \"0001-01-01T00:00:00Z\",\n    \"created_at\": \"2025-05-17T19:14:47.321595Z\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shift/1535293522186729124",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shift",
+						"1535293522186729124"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Shift",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shift/7501446509770357068",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shift",
+						"7501446509770357068"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Request Shift",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"shift_id\": 1535293522186729124,\n    \"worker_id\": 1000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shift/request",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shift",
+						"request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Shift Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"approved\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/shift/1535293522186729124/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"shift",
+						"1535293522186729124",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
